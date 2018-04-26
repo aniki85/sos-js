@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"href="style.css">
+
+  <title>localisation</title>
+</head>
+<body>
+<div id="container">
+<div id="map" style="width:100%;height:500px;"></div>
+</div>
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var myCenter = new google.maps.LatLng(46.536401999999995,-1.772826);
+  var mapOptions = {center: myCenter, zoom: 5};
+  var map = new google.maps.Map(mapCanvas,mapOptions);
+  var marker = new google.maps.Marker({
+    position: myCenter,
+    animation: google.maps.Animation.BOUNCE
+  });
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFP_F1PC7M0rmhs6coqFYjvb7638fOPwE&callback=initMap"
+  async defer></script>
+
+
+  <script>
+  navigator.geolocation.getCurrentPosition(success, error)
+
+  function success(pos){
+	console.log(pos.coords.latitude,  pos.coords.longitude)
+    alert('Localisé')
+  };
+  function error(pos){
+    alert('Non Localisé')
+  };
+  </script>
+
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
