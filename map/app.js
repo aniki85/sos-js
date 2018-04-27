@@ -9,7 +9,7 @@ function initMap(){
       lat: 46.536401999999995 ,
       lng: -1.772826
   }
-var content = '<img src="1.png" class="avatar"><h2>Olonne sur Mer, France<p>coucou</p></h2><p><a href="./formulaire/index.html">Contact</a></p>';
+var content = '<img src="1.png" class="avatar"><h2>Olonne sur Mer, France<p>coucou</p></h2><p><a href="./formulaire/index.html">Contact</a></p><a href="index1.html">Localisation</a>';
 
 map = new google.maps.Map(document.getElementById('map'),{
     center: Olonne_sur_Mer,
